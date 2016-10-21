@@ -10,5 +10,13 @@ package Cine;
  * @author JoseLuis
  */
 public class Coordenada {
+    public int fila;
+    public int columna;
+    
+  
+    public Coordenada(int fila, int columna){
+        this.fila=0;
+        this.columna=0;
+    }
     
 }

@@ -12,7 +12,12 @@ package Cine;
 public class SalaCine {
     
     Ticket assientos[][] = new Ticket[10][30];
-    int ticketven=0;
+    private int ticketven;
+    
+    public SalaCine(){
+        ticketven=0;
+    }
+    
     
     public Coordenada searchTicket(int num,int f,int c,int Farre,int Carre){
      if(f <= Farre){
@@ -29,4 +34,41 @@ public class SalaCine {
         }
         return null;
     }
+    
+    public void reset(int f,int c,int Farre,int Carre){
+     if(f <= Farre){
+            if(c <= Carre){
+                 assientos[f][c]=null;
+                 reset(f,c+1,Farre,Carre);
+            }
+            else{
+                reset(f,c+1,Farre,Carre);
+            }
+        }
+    }
+    
+    public boolean palindromo(String palabra,String palabra2,int letras){
+        if(letras>=0){
+            palabra2+=palabra.charAt(letras);
+            palindromo(palabra,palabra2,letras-1);
+        }else if(palabra.equalsIgnoreCase(palabra2)){
+            return true;
+        }
+        return false;
+    }
+    
+    public double income(int f,int c,int Farre,int Carre,double suma){
+    if(f <= Farre){
+            if(c <= Carre){
+                Ticket puesto = assientos[f][c];
+                suma+=puesto.precio;
+                income(f,c+1,Farre,Carre,suma);
+            }
+            else{
+               income(f+1,0,Farre,Carre,suma);
+            }
+        }
+    
+    return suma;
+    }//Fin Income
 }

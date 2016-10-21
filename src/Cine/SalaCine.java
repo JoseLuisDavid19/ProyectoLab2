@@ -70,7 +70,7 @@ public class SalaCine {
                income(f+1,0,Farre,Carre,suma);
             }
         }
-    
+  
     return suma;
     }//Fin Income
 
@@ -90,5 +90,16 @@ public class SalaCine {
             
     }
 
-    
+    public void printSala(int f,int c,int Farre,int Carre){
+    if(f <= Farre){
+            if(c <= Carre){
+                Ticket puesto = assientos[f][c];
+                System.out.println("[ Numero: "+puesto.getReferencia()+" Precio: "+ puesto.precio+" Fecha: "+puesto.fecha+" ]");
+                printSala(f,c+1,Farre,Carre);
+            }
+            else{
+               printSala(f+1,0,Farre,Carre);
+            }
+        }
+    }
 }

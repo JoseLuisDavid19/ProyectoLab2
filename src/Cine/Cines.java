@@ -5,6 +5,8 @@
  */
 package Cine;
 
+import java.util.Scanner;
+
 /**
  *
  * @author JoseLuis
@@ -13,7 +15,8 @@ public class Cines {
     
     
 public Cines(){
-    Cines SalaCine = new Cines();
+    Scanner in=new Scanner(System.in);
+    SalaCine sala = new SalaCine();
     int opcion=0;
     do{
         System.out.println("1. Sellticket");
@@ -23,17 +26,21 @@ public Cines(){
         System.out.println("5. Salir");
         
        switch(opcion){
-           case 1:   
-            /*   SalaCine.sellTicket();*/
+           case 1: 
+               System.out.print("Nombre: ");
+               String cliente=in.nextLine();
+               int fila=in.nextInt();
+               int columna=in.nextInt();
+               sala.sellTicket(cliente, fila, opcion);
                break;
            case 2:
-             /*  SalaCine.printSala(); */
+               
                break;
            case 3:
-             /*  SalaCine.cancelTicket(); */
+               
                break;
            case 4:
-             /*  SalaCine.eventClose(); */
+               
                break;
            default:
                System.out.println("Hasta Pronto.....");

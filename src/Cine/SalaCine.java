@@ -89,6 +89,13 @@ public class SalaCine {
         }
             
     }
+    
+   
+        
+    public void eventClose(){
+        System.out.println("total de ingresos ganados: "+income(0,0,10,30,0));
+        reset(0,0,10,30);
+    }
 
     
 }

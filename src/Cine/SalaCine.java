@@ -5,6 +5,8 @@
  */
 package Cine;
 
+import java.util.Calendar;
+
 /**
  *
  * @author JoseLuis
@@ -13,7 +15,7 @@ public class SalaCine {
     
     Ticket assientos[][] = new Ticket[10][30];
     private int ticketven;
-    
+    Calendar hoy;
     public SalaCine(){
         ticketven=0;
     }
@@ -71,4 +73,22 @@ public class SalaCine {
     
     return suma;
     }//Fin Income
+
+    public void sellTicket(String Cliente,int Fila,int Columna){
+        if(assientos[Fila][Columna]==null){
+            Ticket puesto =assientos[Fila][Columna];
+            ticketven+=1;
+            if(hoy.equals(Calendar.TUESDAY)){
+            puesto.precio=50;
+            }else if(hoy.equals(Calendar.THURSDAY) && palindromo(Cliente,"",Cliente.length())){
+                puesto.precio=100*0.7;
+            }else{
+            puesto.precio=100;
+            }
+            puesto.referencia=ticketven;
+        }
+            
+    }
+
+    
 }

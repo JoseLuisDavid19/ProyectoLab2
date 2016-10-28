@@ -10,22 +10,23 @@ package CallTG2;
  * @author JoseLuis
  */
 public class PlanSmart extends PlanBasico {
-    public PlanSmart(){
-    super();
+    public PlanSmart(int codigo,String nombre){
+    super(codigo,nombre);
+    
     }
     public double pagoMensual(){
-    PlanBasico plan=new  PlanBasico();
-        /*double minutosHablados=plan.monthlyMinutes();
-          double total=minutos -300;
+        double minutosHablados=monthlyMinutes();
+          double total=minutosHablados -300;
           if(total>0)
-               return=(total*0.5)+22+20;
-        */
-        return 42;
+               return (total*0.5)+22+20;
         
-        /*
-        public String toString(){
-            return super.toString()+"PlanSmart"
-        }
-        */
+        return 42;
     }
-}
+        
+    @Override
+        public String toString(){
+            return super.toString() + "Plan Smart";
+        }
+        
+    }
+

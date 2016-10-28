@@ -35,20 +35,20 @@ public class PlanBasico {
      plan.add(new LogCall(numero, mins));
  }
  
- public double montlyMinutes(){
+ public double monthlyMinutes(){
      Calendar hoy = Calendar.getInstance();
      int mesSiguiente = hoy.get(Calendar.MONTH)<12?hoy.get(Calendar.MONTH)+1: hoy.get(Calendar.JANUARY);
      for(LogCall ls : plan){
-         if(ls.mes < mesSiguiente  && ls.mes == hoy.get(Calendar.MONTH) ){
+        /* if(ls.mes < mesSiguiente  && ls.mes == hoy.get(Calendar.MONTH) ){
              
-         }
+         }*/
          
      }
      return 0;
  }
  
  public double pagoMensual(){
-     return montlyMinutes()*0.05;
+     return monthlyMinutes()*0.05;
  }
  
  public String toString(){

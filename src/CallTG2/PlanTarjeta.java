@@ -13,9 +13,8 @@ import java.util.Calendar;
  */
 public class PlanTarjeta extends PlanBasico {
     private double saldo;
-    private PlanBasico plan=new PlanBasico();
-    public PlanTarjeta(){
-    super();
+    public PlanTarjeta(int codigo,String nombre){
+    super(codigo,nombre);
     saldo=0;
     }
     
@@ -30,8 +29,8 @@ public class PlanTarjeta extends PlanBasico {
     
     public void call(int numero,double minutos){
     double costoLlamada= minutos*.7;
-    //if(costoLlamada<=saldo)
-     //   plan.call(numero,minutos); saldo-=costoLlamada;
+    if(costoLlamada<=saldo)
+       super.call(numero,minutos); saldo-=costoLlamada;
     
     }
     public double pagoMensual(){

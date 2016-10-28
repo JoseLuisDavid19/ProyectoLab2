@@ -32,4 +32,8 @@ public class Ticket {
  public void getFecha(){
      System.out.println("hoy: "+fecha);
  }
+
+ public void print(){
+     System.out.println("[ Numero: "+referencia+" Precio: "+precio+" Fecha: "+fecha+" ]");
+ }
 }

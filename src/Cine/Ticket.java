@@ -34,6 +34,6 @@ public class Ticket {
  }
 
  public void print(){
-     System.out.println("Numero: "+referencia+" Precio: "+precio+" Fecha: "+fecha);
+     System.out.println("[ Numero: "+referencia+" Precio: "+precio+" Fecha: "+fecha+" ]");
  }
 }

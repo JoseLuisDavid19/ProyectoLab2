@@ -89,17 +89,37 @@ public class SalaCine {
         }
             
     }
+    
+    public boolean cancelTicket(int numero){
+        Coordenada coor=new Coordenada(0,0);
+        coor=searchTicket(numero,0,0,10,30);
+        if(assientos[coor.fila][coor.columna]!=null){
+            assientos[coor.fila][coor.columna]=null;
+            return true;
+        }
+            
+        return false;
+    }
+    
+    public void eventClose(){
+        System.out.println("total de ingresos ganados: "+income(0,0,10,30,0));
+        reset(0,0,10,30);
+    }
 
     public void printSala(int f,int c,int Farre,int Carre){
     if(f <= Farre){
             if(c <= Carre){
                 Ticket puesto = assientos[f][c];
-                System.out.println("[ Numero: "+puesto.getReferencia()+" Precio: "+ puesto.precio+" Fecha: "+puesto.fecha+" ]");
+                if(puesto!=null){
+                    puesto.print();
+                }else{
+                    System.out.println("[ Disponible]");
+                }
                 printSala(f,c+1,Farre,Carre);
             }
             else{
                printSala(f+1,0,Farre,Carre);
             }
         }
-    }
+    }// Fin Sala
 }

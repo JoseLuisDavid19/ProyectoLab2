@@ -16,11 +16,16 @@ public class LogCall {
     public int nmarcado;
     public double duracion;
     Calendar fecha; 
-    
+    public int mes;
+    public int dia;
+    public int hora;
 public LogCall(int nmarcado, double duracion){
     this.nmarcado=54632736;
     this.duracion=10;
-    this.fecha.getTime();
+    mes=fecha.get(Calendar.MONTH);
+    dia=fecha.get(Calendar.DAY_OF_MONTH);
+    hora=fecha.get(Calendar.HOUR_OF_DAY);
+    
 }
 
 public String toString(){
